@@ -1,0 +1,18 @@
+    
+ <ul class="list-group" style="text-align: left;" >
+
+ <li [ngClass]="{'list-group-item': true,
+ 'list-group-item-success': postLoveIts > '0',
+ 'list-group-item-danger': postLoveIts < '0'}" >
+            <div ><h2 >{{postTitle}} </h2>
+                <h4 style="text-align: right; color: rgba(83, 80, 83, 0.867);  " >
+                    {{ lastUpdate | date: 'd/M/yy, h:mm a'  }}</h4> </div>
+            <h4>{{postContent}}</h4>
+            <a [routerLink]="[id]">Détails</a><br>
+             <button type="button" class="btn btn-success" (click)="LoveIt()">Love it</button>
+             <button type="button" class="btn btn-danger" (click)="DislikeIt()">Don't Love it</button>
+             <button type="button" class="btn btn-danger" style="float: right;" (click)="onDelete()">Supprimer post</button>
+   <h5>Le nombre de j'aime est :{{postLoveIts}}</h5>
+  </li>
+    
+  </ul>
